@@ -1,6 +1,9 @@
 package com.example.controller;
 
+import com.example.dto.RegistroUsuarioDTO;
 import com.example.dto.UsuarioDTO;
+import com.example.mapper.UsuarioMapper;
+import com.example.service.RegistroUsuarioService;
 import com.example.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -14,14 +17,17 @@ public class UsuarioController {
     @Autowired
     private UsuarioService usuarioService;
 
+    @Autowired
+    private RegistroUsuarioService registroUsuarioService;
+
     @GetMapping("/{id}")
     public UsuarioDTO getUsuarioById(@PathVariable Long id) {
         return usuarioService.getUsuarioById(id);
     }
 
-    @PostMapping
-    public UsuarioDTO createUsuario(@RequestBody UsuarioDTO usuarioDTO) {
-        return usuarioService.saveUsuario(usuarioDTO);
+    @PostMapping("/registrar")
+    public UsuarioDTO registrarUsuario(@RequestBody RegistroUsuarioDTO registroUsuarioDTO) {
+        return UsuarioMapper.INSTANCE.usuarioToUsuarioDTO(registroUsuarioService.registrarUsuario(registroUsuarioDTO));
     }
 
     @PutMapping("/{id}")
