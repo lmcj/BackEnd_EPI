@@ -39,4 +39,9 @@ public class CalculoPoblacionalController {
     public List<CalculoPoblacionalDTO> getAllCalculosPoblacionales() {
         return calculoPoblacionalService.getAllCalculosPoblacionales();
     }
+
+    @GetMapping("/usuario/{idUsuario}")
+    public List<CalculoPoblacionalDTO> getCalculoPoblacionalByUsuario(@PathVariable Long idUsuario) {
+        return calculoPoblacionalService.getCalculoPoblacionalByUsuario(idUsuario);
+    }
 }
