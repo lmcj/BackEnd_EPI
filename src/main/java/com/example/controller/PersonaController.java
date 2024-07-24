@@ -14,23 +14,23 @@ public class PersonaController {
     @Autowired
     private PersonaService personaService;
 
-    @GetMapping("/{id}")
+    @GetMapping("/id/{id}")
     public PersonaDTO getPersonaById(@PathVariable Long id) {
         return personaService.getPersonaById(id);
     }
 
-    @PostMapping
+    @PostMapping("/crear")
     public PersonaDTO createPersona(@RequestBody PersonaDTO personaDTO) {
         return personaService.savePersona(personaDTO);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/actualizar/{id}")
     public PersonaDTO updatePersona(@PathVariable Long id, @RequestBody PersonaDTO personaDTO) {
         personaDTO.setId_persona(id);
         return personaService.savePersona(personaDTO);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/eliminar/{id}")
     public void deletePersona(@PathVariable Long id) {
         personaService.deletePersona(id);
     }

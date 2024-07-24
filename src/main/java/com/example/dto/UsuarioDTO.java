@@ -4,9 +4,9 @@ import java.sql.Timestamp;
 
 public class UsuarioDTO {
     private Long id_usuario;
-    private Long personaId;
-    private Long rolId;
-    private Long credencialId;
+    private Long id_persona;
+    private Long id_rol;
+    private Long id_credencial;
     private String estado;
     private Timestamp fecha_registro;
 
@@ -20,27 +20,27 @@ public class UsuarioDTO {
     }
 
     public Long getPersonaId() {
-        return personaId;
+        return id_persona;
     }
 
-    public void setPersonaId(Long personaId) {
-        this.personaId = personaId;
+    public void setPersonaId(Long id_persona) {
+        this.id_persona = id_persona;
     }
 
     public Long getRolId() {
-        return rolId;
+        return id_rol;
     }
 
-    public void setRolId(Long rolId) {
-        this.rolId = rolId;
+    public void setRolId(Long id_rol) {
+        this.id_rol = id_rol;
     }
 
     public Long getCredencialId() {
-        return credencialId;
+        return id_credencial;
     }
 
-    public void setCredencialId(Long credencialId) {
-        this.credencialId = credencialId;
+    public void setCredencialId(Long id_credencial) {
+        this.id_credencial = id_credencial;
     }
 
     public String getEstado() {

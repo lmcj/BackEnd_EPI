@@ -2,7 +2,7 @@ package com.example.dto;
 
 public class AuxiliarMetodosDTO {
     private Long id_auxiliar_metodos;
-    private Long metodoId;
+    private Long id_metodo;
     private int año;
     private double valor;
     private String nombre_metodo;
@@ -16,12 +16,12 @@ public class AuxiliarMetodosDTO {
         this.id_auxiliar_metodos = id_auxiliar_metodos;
     }
 
-    public Long getMetodoId() {
-        return metodoId;
+    public Long getId_metodo() {
+        return id_metodo;
     }
 
-    public void setMetodoId(Long metodoId) {
-        this.metodoId = metodoId;
+    public void setId_metodo(Long id_metodo) {
+        this.id_metodo = id_metodo;
     }
 
     public int getAño() {

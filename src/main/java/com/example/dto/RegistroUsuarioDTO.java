@@ -1,34 +1,34 @@
 package com.example.dto;
 
 public class RegistroUsuarioDTO {
-    private String tipoDocumentos;
-    private String numeroDocumento;
+    private String tipo_documento;
+    private String numero_documento;
     private String nombres;
     private String apellidos;
     private String email;
     private String telefono;
     private String direccion;
-    private String fechaNacimiento;
-    private String contraseña;
-    private Long rolId;
+    private String fecha_nacimiento;
+    private String contrasenia;
+    private Long id_rol; // Asegúrate de que esto es correcto
     private String estado;
 
     // Getters y Setters
 
-    public String getTipoDocumentos() {
-        return tipoDocumentos;
+    public String getTipo_documento() {
+        return tipo_documento;
     }
 
-    public void setTipoDocumentos(String tipoDocumentos) {
-        this.tipoDocumentos = tipoDocumentos;
+    public void setTipo_documento(String tipo_documento) {
+        this.tipo_documento = tipo_documento;
     }
 
-    public String getNumeroDocumento() {
-        return numeroDocumento;
+    public String getNumero_documento() {
+        return numero_documento;
     }
 
-    public void setNumeroDocumento(String numeroDocumento) {
-        this.numeroDocumento = numeroDocumento;
+    public void setNumero_documento(String numero_documento) {
+        this.numero_documento = numero_documento;
     }
 
     public String getNombres() {
@@ -71,28 +71,28 @@ public class RegistroUsuarioDTO {
         this.direccion = direccion;
     }
 
-    public String getFechaNacimiento() {
-        return fechaNacimiento;
+    public String getFecha_nacimiento() {
+        return fecha_nacimiento;
     }
 
-    public void setFechaNacimiento(String fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
+    public void setFecha_nacimiento(String fecha_nacimiento) {
+        this.fecha_nacimiento = fecha_nacimiento;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getContrasenia() {
+        return contrasenia;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setContrasenia(String contrasenia) {
+        this.contrasenia = contrasenia;
     }
 
-    public Long getRolId() {
-        return rolId;
+    public Long getId_rol() {
+        return id_rol;
     }
 
-    public void setRolId(Long rolId) {
-        this.rolId = rolId;
+    public void setId_rol(Long id_rol) {
+        this.id_rol = id_rol;
     }
 
     public String getEstado() {

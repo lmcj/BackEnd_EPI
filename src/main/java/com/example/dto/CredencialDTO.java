@@ -3,7 +3,7 @@ package com.example.dto;
 public class CredencialDTO {
     private Long id_credencial;
     private String email;
-    private String contraseña;
+    private String contrasenia;
 
     // Getters y Setters
     public Long getId_credencial() {
@@ -22,11 +22,11 @@ public class CredencialDTO {
         this.email = email;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getContrasenia() {
+        return contrasenia;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setContrasenia(String contrasenia) {
+        this.contrasenia = contrasenia;
     }
 }

@@ -2,8 +2,8 @@ package com.example.dto;
 
 public class CalculoResiduosDTO {
     private Long id_calculo_residuos;
-    private Long usuarioId;
-    private Long metodoId;
+    private Long id_usuario;
+    private Long id_metodo;
     private double resultado;
 
     // Getters y Setters
@@ -16,19 +16,19 @@ public class CalculoResiduosDTO {
     }
 
     public Long getUsuarioId() {
-        return usuarioId;
+        return id_usuario;
     }
 
-    public void setUsuarioId(Long usuarioId) {
-        this.usuarioId = usuarioId;
+    public void setUsuarioId(Long id_usuario) {
+        this.id_usuario = id_usuario;
     }
 
     public Long getMetodoId() {
-        return metodoId;
+        return id_metodo;
     }
 
-    public void setMetodoId(Long metodoId) {
-        this.metodoId = metodoId;
+    public void setMetodoId(Long id_metodo) {
+        this.id_metodo = id_metodo;
     }
 
     public double getResultado() {

@@ -4,7 +4,7 @@ public class EstimacionGEIDTO {
     private Long id_estimacion_gei;
     private String nombre_identificador;
     private double valor;
-    private Long usuarioId;
+    private Long id_usuario;
 
     // Getters y Setters
     public Long getId_estimacion_gei() {
@@ -32,10 +32,10 @@ public class EstimacionGEIDTO {
     }
 
     public Long getUsuarioId() {
-        return usuarioId;
+        return id_usuario;
     }
 
-    public void setUsuarioId(Long usuarioId) {
-        this.usuarioId = usuarioId;
+    public void setUsuarioId(Long id_usuario) {
+        this.id_usuario = id_usuario;
     }
 }

@@ -14,23 +14,23 @@ public class CalculoResiduosController {
     @Autowired
     private CalculoResiduosService calculoResiduosService;
 
-    @GetMapping("/{id}")
+    @GetMapping("/id/{id}")
     public CalculoResiduosDTO getCalculoResiduosById(@PathVariable Long id) {
         return calculoResiduosService.getCalculoResiduosById(id);
     }
 
-    @PostMapping
+    @PostMapping("/crear")
     public CalculoResiduosDTO createCalculoResiduos(@RequestBody CalculoResiduosDTO calculoResiduosDTO) {
         return calculoResiduosService.saveCalculoResiduos(calculoResiduosDTO);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/actualizar/{id}")
     public CalculoResiduosDTO updateCalculoResiduos(@PathVariable Long id, @RequestBody CalculoResiduosDTO calculoResiduosDTO) {
         calculoResiduosDTO.setId_calculo_residuos(id);
         return calculoResiduosService.saveCalculoResiduos(calculoResiduosDTO);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/eliminar/{id}")
     public void deleteCalculoResiduos(@PathVariable Long id) {
         calculoResiduosService.deleteCalculoResiduos(id);
     }

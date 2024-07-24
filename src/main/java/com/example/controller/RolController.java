@@ -14,23 +14,23 @@ public class RolController {
     @Autowired
     private RolService rolService;
 
-    @GetMapping("/{id}")
+    @GetMapping("/id/{id}")
     public RolDTO getRolById(@PathVariable Long id) {
         return rolService.getRolById(id);
     }
 
-    @PostMapping
+    @PostMapping("/crear")
     public RolDTO createRol(@RequestBody RolDTO rolDTO) {
         return rolService.saveRol(rolDTO);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/actualizar/{id}")
     public RolDTO updateRol(@PathVariable Long id, @RequestBody RolDTO rolDTO) {
         rolDTO.setId_rol(id);
         return rolService.saveRol(rolDTO);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/eliminar/{id}")
     public void deleteRol(@PathVariable Long id) {
         rolService.deleteRol(id);
     }

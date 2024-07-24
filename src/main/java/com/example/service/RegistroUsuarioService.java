@@ -42,7 +42,7 @@ public class RegistroUsuarioService {
     @Transactional
     public Usuario registrarUsuario(RegistroUsuarioDTO registroUsuarioDTO) {
         logger.info("Iniciando el registro del usuario");
-        
+
         // Usar el mapper para convertir DTO a entidades
         Persona persona = RegistroUsuarioMapper.INSTANCE.registroUsuarioDTOToPersona(registroUsuarioDTO);
         Credencial credencial = RegistroUsuarioMapper.INSTANCE.registroUsuarioDTOToCredencial(registroUsuarioDTO);
@@ -55,13 +55,13 @@ public class RegistroUsuarioService {
         // Cifrar la contraseña antes de guardar Credencial
         logger.info("Cifrando la contraseña y guardando la credencial");
         credencial.setEmail(persona.getEmail()); // Usar el mismo email de Persona
-        credencial.setContraseña(passwordEncoder.encode(credencial.getContraseña()));
+        credencial.setContrasenia(passwordEncoder.encode(credencial.getContrasenia()));
         credencial = credencialRepository.save(credencial);
 
         // Configurar y guardar Usuario
         logger.info("Configurando y guardando el usuario");
         usuario.setPersona(persona);
-        usuario.setRol(rolRepository.findById(registroUsuarioDTO.getRolId()).orElseThrow(() -> new RuntimeException("Rol no encontrado")));
+        usuario.setRol(rolRepository.findById(registroUsuarioDTO.getId_rol()).orElseThrow(() -> new RuntimeException("Rol no encontrado")));
         usuario.setCredencial(credencial);
 
         // Establecer la fecha de registro actual

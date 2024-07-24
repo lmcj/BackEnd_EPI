@@ -10,9 +10,9 @@ import org.mapstruct.factory.Mappers;
 public interface AuxiliarMetodosMapper {
     AuxiliarMetodosMapper INSTANCE = Mappers.getMapper(AuxiliarMetodosMapper.class);
 
-    @Mapping(source = "metodo.id_metodo", target = "metodoId")
+    @Mapping(source = "metodo.id_metodo", target = "id_metodo")
     AuxiliarMetodosDTO auxiliarMetodosToAuxiliarMetodosDTO(AuxiliarMetodos auxiliarMetodos);
 
-    @Mapping(source = "metodoId", target = "metodo.id_metodo")
+    @Mapping(source = "id_metodo", target = "metodo.id_metodo")
     AuxiliarMetodos auxiliarMetodosDTOToAuxiliarMetodos(AuxiliarMetodosDTO auxiliarMetodosDTO);
 }

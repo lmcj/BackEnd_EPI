@@ -14,23 +14,23 @@ public class MetodoController {
     @Autowired
     private MetodoService metodoService;
 
-    @GetMapping("/{id}")
+    @GetMapping("/id/{id}")
     public MetodoDTO getMetodoById(@PathVariable Long id) {
         return metodoService.getMetodoById(id);
     }
 
-    @PostMapping
+    @PostMapping("/crear")
     public MetodoDTO createMetodo(@RequestBody MetodoDTO metodoDTO) {
         return metodoService.saveMetodo(metodoDTO);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/actualizar/{id}")
     public MetodoDTO updateMetodo(@PathVariable Long id, @RequestBody MetodoDTO metodoDTO) {
         metodoDTO.setId_metodo(id);
         return metodoService.saveMetodo(metodoDTO);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/eliminar/{id}")
     public void deleteMetodo(@PathVariable Long id) {
         metodoService.deleteMetodo(id);
     }

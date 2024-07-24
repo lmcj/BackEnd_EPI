@@ -14,23 +14,23 @@ public class AuxiliarMetodosController {
     @Autowired
     private AuxiliarMetodosService auxiliarMetodosService;
 
-    @GetMapping("/{id}")
+    @GetMapping("/id/{id}")
     public AuxiliarMetodosDTO getAuxiliarMetodosById(@PathVariable Long id) {
         return auxiliarMetodosService.getAuxiliarMetodosById(id);
     }
 
-    @PostMapping
+    @PostMapping("/crear")
     public AuxiliarMetodosDTO createAuxiliarMetodos(@RequestBody AuxiliarMetodosDTO auxiliarMetodosDTO) {
         return auxiliarMetodosService.saveAuxiliarMetodos(auxiliarMetodosDTO);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/actualizar/{id}")
     public AuxiliarMetodosDTO updateAuxiliarMetodos(@PathVariable Long id, @RequestBody AuxiliarMetodosDTO auxiliarMetodosDTO) {
         auxiliarMetodosDTO.setId_auxiliar_metodos(id);
         return auxiliarMetodosService.saveAuxiliarMetodos(auxiliarMetodosDTO);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/eliminar/{id}")
     public void deleteAuxiliarMetodos(@PathVariable Long id) {
         auxiliarMetodosService.deleteAuxiliarMetodos(id);
     }

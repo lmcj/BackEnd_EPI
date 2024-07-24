@@ -12,7 +12,7 @@ public class Credencial {
     private String email;
 
     @Column(nullable = false, length = 100)
-    private String contraseña;
+    private String contrasenia;
 
     // Getters and setters
 
@@ -32,12 +32,12 @@ public class Credencial {
         this.email = email;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getContrasenia() {
+        return contrasenia;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setContrasenia(String contrasenia) {
+        this.contrasenia = contrasenia;
     }
     
 }

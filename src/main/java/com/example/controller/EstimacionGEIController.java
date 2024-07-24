@@ -14,23 +14,23 @@ public class EstimacionGEIController {
     @Autowired
     private EstimacionGEIService estimacionGEIService;
 
-    @GetMapping("/{id}")
+    @GetMapping("/id/{id}")
     public EstimacionGEIDTO getEstimacionGEIById(@PathVariable Long id) {
         return estimacionGEIService.getEstimacionGEIById(id);
     }
 
-    @PostMapping
+    @PostMapping("/crear")
     public EstimacionGEIDTO createEstimacionGEI(@RequestBody EstimacionGEIDTO estimacionGEIDTO) {
         return estimacionGEIService.saveEstimacionGEI(estimacionGEIDTO);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/actualizar/{id}")
     public EstimacionGEIDTO updateEstimacionGEI(@PathVariable Long id, @RequestBody EstimacionGEIDTO estimacionGEIDTO) {
         estimacionGEIDTO.setId_estimacion_gei(id);
         return estimacionGEIService.saveEstimacionGEI(estimacionGEIDTO);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/eliminar/{id}")
     public void deleteEstimacionGEI(@PathVariable Long id) {
         estimacionGEIService.deleteEstimacionGEI(id);
     }

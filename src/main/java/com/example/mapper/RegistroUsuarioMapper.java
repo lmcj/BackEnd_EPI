@@ -13,14 +13,14 @@ import org.mapstruct.ReportingPolicy;
 public interface RegistroUsuarioMapper {
     RegistroUsuarioMapper INSTANCE = Mappers.getMapper(RegistroUsuarioMapper.class);
 
-    @Mapping(source = "tipoDocumentos", target = "tipo_documentos")
-    @Mapping(source = "numeroDocumento", target = "numero_documento")
-    @Mapping(source = "fechaNacimiento", target = "fecha_nacimiento")
+    @Mapping(source = "tipo_documento", target = "tipo_documento")
+    @Mapping(source = "numero_documento", target = "numero_documento")
+    @Mapping(source = "fecha_nacimiento", target = "fecha_nacimiento")
     @Mapping(target = "id_persona", ignore = true) // Ignorar id_persona
     Persona registroUsuarioDTOToPersona(RegistroUsuarioDTO registroUsuarioDTO);
 
     @Mapping(source = "email", target = "email")
-    @Mapping(source = "contraseña", target = "contraseña")
+    @Mapping(source = "contrasenia", target = "contrasenia")
     @Mapping(target = "id_credencial", ignore = true) // Ignorar id_credencial
     Credencial registroUsuarioDTOToCredencial(RegistroUsuarioDTO registroUsuarioDTO);
 

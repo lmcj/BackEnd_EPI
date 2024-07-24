@@ -14,23 +14,23 @@ public class CredencialController {
     @Autowired
     private CredencialService credencialService;
 
-    @GetMapping("/{id}")
+    @GetMapping("/id/{id}")
     public CredencialDTO getCredencialById(@PathVariable Long id) {
         return credencialService.getCredencialById(id);
     }
 
-    @PostMapping
+    @PostMapping("/crear")
     public CredencialDTO createCredencial(@RequestBody CredencialDTO credencialDTO) {
         return credencialService.saveCredencial(credencialDTO);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/actualizar/{id}")
     public CredencialDTO updateCredencial(@PathVariable Long id, @RequestBody CredencialDTO credencialDTO) {
         credencialDTO.setId_credencial(id);
         return credencialService.saveCredencial(credencialDTO);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/eliminar/{id}")
     public void deleteCredencial(@PathVariable Long id) {
         credencialService.deleteCredencial(id);
     }

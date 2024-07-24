@@ -20,23 +20,23 @@ public class UsuarioController {
     @Autowired
     private RegistroUsuarioService registroUsuarioService;
 
-    @GetMapping("/{id}")
+    @GetMapping("/id/{id}")
     public UsuarioDTO getUsuarioById(@PathVariable Long id) {
         return usuarioService.getUsuarioById(id);
     }
 
-    @PostMapping("/registrar")
+    @PostMapping("/crear")
     public UsuarioDTO registrarUsuario(@RequestBody RegistroUsuarioDTO registroUsuarioDTO) {
         return UsuarioMapper.INSTANCE.usuarioToUsuarioDTO(registroUsuarioService.registrarUsuario(registroUsuarioDTO));
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/actualizar/{id}")
     public UsuarioDTO updateUsuario(@PathVariable Long id, @RequestBody UsuarioDTO usuarioDTO) {
         usuarioDTO.setId_usuario(id);
         return usuarioService.saveUsuario(usuarioDTO);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/eliminar/{id}")
     public void deleteUsuario(@PathVariable Long id) {
         usuarioService.deleteUsuario(id);
     }
