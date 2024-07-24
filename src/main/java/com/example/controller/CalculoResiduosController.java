@@ -39,4 +39,9 @@ public class CalculoResiduosController {
     public List<CalculoResiduosDTO> getAllCalculosResiduos() {
         return calculoResiduosService.getAllCalculosResiduos();
     }
+
+    @GetMapping("/usuario/{idUsuario}")
+    public List<CalculoResiduosDTO> getCalculoResiduosByUsuario(@PathVariable Long idUsuario) {
+        return calculoResiduosService.getCalculoResiduosByUsuario(idUsuario);
+    }
 }
